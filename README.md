@@ -14,5 +14,6 @@ Recurring payments (e.g. bills)
 3. Create UI
 4. Implement system to assign items on receipt to individual users
 5. Implement general bill split
+6. Incorporate Apple pay for direct payment
 
 
