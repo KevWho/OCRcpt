@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0936F645FC61F2E06DDE5A03 /* Pods_OCRcpt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B41A1EAE0A76AFAC8FF842 /* Pods_OCRcpt.framework */; };
+		133FE97B218E298B005ECCFE /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133FE97A218E298B005ECCFE /* ScannerViewController.swift */; };
 		13480783218D959700DD8B67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13480782218D959700DD8B67 /* AppDelegate.swift */; };
 		13480785218D959800DD8B67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13480784218D959800DD8B67 /* ViewController.swift */; };
 		13480788218D959800DD8B67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13480786218D959800DD8B67 /* Main.storyboard */; };
@@ -17,7 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0F48F8B8218E2E98004A5777 /* OCRcpt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OCRcpt.entitlements; sourceTree = "<group>"; };
+		133FE97A218E298B005ECCFE /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		133FE97C218E2DC3005ECCFE /* OCRcpt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OCRcpt.entitlements; sourceTree = "<group>"; };
 		1348077F218D959700DD8B67 /* OCRcpt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCRcpt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13480782218D959700DD8B67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13480784218D959800DD8B67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,9 +66,10 @@
 		13480781218D959700DD8B67 /* OCRcpt */ = {
 			isa = PBXGroup;
 			children = (
-				0F48F8B8218E2E98004A5777 /* OCRcpt.entitlements */,
+				133FE97C218E2DC3005ECCFE /* OCRcpt.entitlements */,
 				13480782218D959700DD8B67 /* AppDelegate.swift */,
 				13480784218D959800DD8B67 /* ViewController.swift */,
+				133FE97A218E298B005ECCFE /* ScannerViewController.swift */,
 				13480786218D959800DD8B67 /* Main.storyboard */,
 				1348078C218D959800DD8B67 /* Assets.xcassets */,
 				1348078E218D959800DD8B67 /* LaunchScreen.storyboard */,
@@ -223,6 +226,7 @@
 				13480785218D959800DD8B67 /* ViewController.swift in Sources */,
 				1348078B218D959800DD8B67 /* OCRcpt.xcdatamodeld in Sources */,
 				13480783218D959700DD8B67 /* AppDelegate.swift in Sources */,
+				133FE97B218E298B005ECCFE /* ScannerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,15 +374,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = OCRcpt/OCRcpt.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9QWEKFJE85;
 				INFOPLIST_FILE = OCRcpt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.OCRcpt.OCRcpt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -390,15 +397,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = OCRcpt/OCRcpt.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9QWEKFJE85;
 				INFOPLIST_FILE = OCRcpt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.OCRcpt.OCRcpt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
