@@ -148,12 +148,24 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${PODS_ROOT}/BlinkReceipt/BlinkReceipt.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CHCSVParser/CHCSVParser.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GPUImage/GPUImage.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SimpleKeychain/SimpleKeychain.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftOCR/SwiftOCR.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/libextobjc/libextobjc.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${PODS_ROOT}/BlinkReceipt/BlinkReceipt.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CHCSVParser/CHCSVParser.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GPUImage/GPUImage.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SimpleKeychain/SimpleKeychain.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftOCR/SwiftOCR.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/libextobjc/libextobjc.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

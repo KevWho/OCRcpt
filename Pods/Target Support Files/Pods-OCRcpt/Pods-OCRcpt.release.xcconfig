@@ -1,10 +1,11 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+BLINKRECEIPT_VERSION = 1.6.3
 CLANG_MODULES_AUTOLINK = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/GPUImage" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftOCR"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking" "${PODS_CONFIGURATION_BUILD_DIR}/CHCSVParser" "${PODS_CONFIGURATION_BUILD_DIR}/GPUImage" "${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD" "${PODS_CONFIGURATION_BUILD_DIR}/SimpleKeychain" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftOCR" "${PODS_CONFIGURATION_BUILD_DIR}/libextobjc" "${PODS_ROOT}/BlinkReceipt"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/GPUImage/GPUImage.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/SwiftOCR/SwiftOCR.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "AVFoundation" -framework "CoreMedia" -framework "GPUImage" -framework "OpenGLES" -framework "QuartzCore" -framework "SwiftOCR"
+OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/CHCSVParser/CHCSVParser.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/GPUImage/GPUImage.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD/MBProgressHUD.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/SimpleKeychain/SimpleKeychain.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/SwiftOCR/SwiftOCR.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/libextobjc/libextobjc.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "AFNetworking" -framework "AVFoundation" -framework "BlinkReceipt" -framework "CHCSVParser" -framework "CoreGraphics" -framework "CoreMedia" -framework "GPUImage" -framework "MBProgressHUD" -framework "MobileCoreServices" -framework "OpenGLES" -framework "QuartzCore" -framework "Security" -framework "SimpleKeychain" -framework "SwiftOCR" -framework "SystemConfiguration" -framework "libextobjc"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
