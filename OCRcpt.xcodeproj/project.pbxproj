@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0936F645FC61F2E06DDE5A03 /* Pods_OCRcpt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B41A1EAE0A76AFAC8FF842 /* Pods_OCRcpt.framework */; };
 		13480783218D959700DD8B67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13480782218D959700DD8B67 /* AppDelegate.swift */; };
 		13480785218D959800DD8B67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13480784218D959800DD8B67 /* ViewController.swift */; };
 		13480788218D959800DD8B67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13480786218D959800DD8B67 /* Main.storyboard */; };
@@ -26,9 +25,6 @@
 		1348078C218D959800DD8B67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1348078F218D959800DD8B67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13480791218D959800DD8B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6F0A0CBEE7692E149AC3DBAA /* Pods-OCRcpt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCRcpt.debug.xcconfig"; path = "Target Support Files/Pods-OCRcpt/Pods-OCRcpt.debug.xcconfig"; sourceTree = "<group>"; };
-		D3B41A1EAE0A76AFAC8FF842 /* Pods_OCRcpt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCRcpt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0360E98045701838258EA21 /* Pods-OCRcpt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCRcpt.release.xcconfig"; path = "Target Support Files/Pods-OCRcpt/Pods-OCRcpt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,7 +32,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0936F645FC61F2E06DDE5A03 /* Pods_OCRcpt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,8 +43,6 @@
 			children = (
 				13480781218D959700DD8B67 /* OCRcpt */,
 				13480780218D959700DD8B67 /* Products */,
-				C41D52D288BE8691B79FD6B9 /* Pods */,
-				EA92A0CF8997F062F40EB21C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,23 +69,6 @@
 			path = OCRcpt;
 			sourceTree = "<group>";
 		};
-		C41D52D288BE8691B79FD6B9 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6F0A0CBEE7692E149AC3DBAA /* Pods-OCRcpt.debug.xcconfig */,
-				E0360E98045701838258EA21 /* Pods-OCRcpt.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		EA92A0CF8997F062F40EB21C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D3B41A1EAE0A76AFAC8FF842 /* Pods_OCRcpt.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -100,11 +76,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13480794218D959800DD8B67 /* Build configuration list for PBXNativeTarget "OCRcpt" */;
 			buildPhases = (
-				FBA163CF26E5011520D6B86F /* [CP] Check Pods Manifest.lock */,
 				1348077B218D959700DD8B67 /* Sources */,
 				1348077C218D959700DD8B67 /* Frameworks */,
 				1348077D218D959700DD8B67 /* Resources */,
-				89BC2F5BF40C6AB461CA7205 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -165,55 +139,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		89BC2F5BF40C6AB461CA7205 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OCRcpt/Pods-OCRcpt-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GPUImage/GPUImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftOCR/SwiftOCR.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GPUImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftOCR.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OCRcpt/Pods-OCRcpt-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FBA163CF26E5011520D6B86F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OCRcpt-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1348077B218D959700DD8B67 /* Sources */ = {
@@ -366,7 +291,6 @@
 		};
 		13480795218D959800DD8B67 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F0A0CBEE7692E149AC3DBAA /* Pods-OCRcpt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = OCRcpt/OCRcpt.entitlements;
@@ -386,7 +310,6 @@
 		};
 		13480796218D959800DD8B67 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E0360E98045701838258EA21 /* Pods-OCRcpt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = OCRcpt/OCRcpt.entitlements;
