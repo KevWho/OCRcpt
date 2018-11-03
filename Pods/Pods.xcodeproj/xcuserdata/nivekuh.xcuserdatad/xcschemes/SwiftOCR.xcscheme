@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B97AEF9821042B601D03CC91B61E0746"
+               BlueprintIdentifier = "DA73D400CCBE5B9BFB6F57961ED1E8AD"
                BlueprintName = "SwiftOCR"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "SwiftOCR.framework">
