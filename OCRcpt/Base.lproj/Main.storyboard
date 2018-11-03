@@ -107,6 +107,7 @@
                         <viewLayoutGuide key="safeArea" id="Kau-WD-zZP"/>
                     </view>
                     <navigationItem key="navigationItem" id="QR1-de-ew5"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edh-PV-4a1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
