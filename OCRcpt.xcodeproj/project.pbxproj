@@ -29,7 +29,9 @@
 		1348078C218D959800DD8B67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1348078F218D959800DD8B67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13480791218D959800DD8B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5784AD3EAEADD74669A1F026 /* Pods-OCRcpt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCRcpt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OCRcpt/Pods-OCRcpt.debug.xcconfig"; sourceTree = "<group>"; };
 		5E5F9810E7356CE5F62B8416 /* Pods-OCRcpt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCRcpt.debug.xcconfig"; path = "Target Support Files/Pods-OCRcpt/Pods-OCRcpt.debug.xcconfig"; sourceTree = "<group>"; };
+		C4FA1A4D76BF185D1D12D37A /* Pods-OCRcpt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCRcpt.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCRcpt/Pods-OCRcpt.release.xcconfig"; sourceTree = "<group>"; };
 		E079D71554FAD242486D98FF /* Pods-OCRcpt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCRcpt.release.xcconfig"; path = "Target Support Files/Pods-OCRcpt/Pods-OCRcpt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,8 @@
 			children = (
 				5E5F9810E7356CE5F62B8416 /* Pods-OCRcpt.debug.xcconfig */,
 				E079D71554FAD242486D98FF /* Pods-OCRcpt.release.xcconfig */,
+				5784AD3EAEADD74669A1F026 /* Pods-OCRcpt.debug.xcconfig */,
+				C4FA1A4D76BF185D1D12D37A /* Pods-OCRcpt.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
