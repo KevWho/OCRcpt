@@ -11,7 +11,8 @@ Recurring payments (e.g. bills)
 # Gameplan:
 1. Research Tesseract
 2. Implement receipt OCR
-3. Implement system to assign items on receipt to individual users
-4. Implement general bill split
+3. Create UI
+4. Implement system to assign items on receipt to individual users
+5. Implement general bill split
 
 
