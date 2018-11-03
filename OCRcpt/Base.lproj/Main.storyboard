@@ -37,10 +37,10 @@
             </objects>
             <point key="canvasLocation" x="140" y="132.68365817091455"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Menu View Controller-->
         <scene sceneID="PSR-QD-tL2">
             <objects>
-                <viewController id="CQp-FT-dIJ" sceneMemberID="viewController">
+                <viewController id="CQp-FT-dIJ" customClass="MainMenuViewController" customModule="OCRcpt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gem-1V-HLF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,13 +57,13 @@
                                 <state key="normal" title="Input manually"/>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WST-EB-iBs">
-                                <rect key="frame" x="67" y="135" width="240" height="128"/>
+                                <rect key="frame" x="67" y="142" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txx-gF-5UN">
-                                <rect key="frame" x="164" y="301" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txx-gF-5UN">
+                                <rect key="frame" x="21" y="39" width="35" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Button" image="hamburglerMenu"/>
                                 <connections>
                                     <segue destination="ca8-k1-LzT" kind="presentation" id="fjA-qT-L6I"/>
                                 </connections>
@@ -72,21 +72,29 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="v4h-ZV-FrZ"/>
                     </view>
+                    <connections>
+                        <outlet property="hamburgerMenu" destination="txx-gF-5UN" id="4Z0-iE-SLP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="evn-ZV-bdK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="134" y="-554"/>
+            <point key="canvasLocation" x="133.59999999999999" y="-554.57271364317842"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="t4N-SO-hz6">
             <objects>
-                <navigationController id="ca8-k1-LzT" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="ca8-k1-LzT" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sqs-ua-tH2">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mW8-cO-BQD">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="menuWidth">
+                            <real key="value" value="300"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="kPp-aJ-7wr" kind="relationship" relationship="rootViewController" id="d7q-Tw-S5p"/>
@@ -94,7 +102,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQp-4T-6S7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1151" y="-541"/>
+            <point key="canvasLocation" x="1148" y="-555"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="GEO-S3-dRn">
@@ -103,15 +111,39 @@
                     <view key="view" contentMode="scaleToFill" id="ssw-QQ-QUi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jo7-gj-2Bz">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="7AT-nL-zHZ">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7AT-nL-zHZ" id="mG0-lt-kUF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Jo7-gj-2Bz" firstAttribute="trailing" secondItem="Kau-WD-zZP" secondAttribute="trailing" id="BJk-Ih-5Qr"/>
+                            <constraint firstItem="Jo7-gj-2Bz" firstAttribute="top" secondItem="Kau-WD-zZP" secondAttribute="top" id="KQm-Ok-jIX"/>
+                            <constraint firstItem="Jo7-gj-2Bz" firstAttribute="bottom" secondItem="Kau-WD-zZP" secondAttribute="bottom" id="OOa-bU-aT5"/>
+                            <constraint firstItem="Jo7-gj-2Bz" firstAttribute="leading" secondItem="Kau-WD-zZP" secondAttribute="leading" id="ehR-vY-ehn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Kau-WD-zZP"/>
                     </view>
                     <navigationItem key="navigationItem" id="QR1-de-ew5"/>
-                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edh-PV-4a1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2098" y="-532"/>
+            <point key="canvasLocation" x="2096.8000000000002" y="-532.98350824587715"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hamburglerMenu" width="37.5" height="37.5"/>
+    </resources>
 </document>

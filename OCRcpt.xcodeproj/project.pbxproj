@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F270A44218E5EBB004B1558 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F270A43218E5EBB004B1558 /* MainMenuViewController.swift */; };
+		0F57D20F218E640900E78CE1 /* MenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57D20E218E640900E78CE1 /* MenuNavigationController.swift */; };
 		133FE97B218E298B005ECCFE /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133FE97A218E298B005ECCFE /* ScannerViewController.swift */; };
 		13480783218D959700DD8B67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13480782218D959700DD8B67 /* AppDelegate.swift */; };
 		13480785218D959800DD8B67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13480784218D959800DD8B67 /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		02A9A26A6273199892446C90 /* Pods_OCRcpt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCRcpt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F270A43218E5EBB004B1558 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		0F57D20E218E640900E78CE1 /* MenuNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuNavigationController.swift; sourceTree = "<group>"; };
 		133FE97A218E298B005ECCFE /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		133FE97C218E2DC3005ECCFE /* OCRcpt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OCRcpt.entitlements; sourceTree = "<group>"; };
 		1348077F218D959700DD8B67 /* OCRcpt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCRcpt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +76,8 @@
 				13480782218D959700DD8B67 /* AppDelegate.swift */,
 				13480784218D959800DD8B67 /* ViewController.swift */,
 				133FE97A218E298B005ECCFE /* ScannerViewController.swift */,
+				0F270A43218E5EBB004B1558 /* MainMenuViewController.swift */,
+				0F57D20E218E640900E78CE1 /* MenuNavigationController.swift */,
 				13480786218D959800DD8B67 /* Main.storyboard */,
 				1348078C218D959800DD8B67 /* Assets.xcassets */,
 				1348078E218D959800DD8B67 /* LaunchScreen.storyboard */,
@@ -310,9 +316,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F270A44218E5EBB004B1558 /* MainMenuViewController.swift in Sources */,
 				13480785218D959800DD8B67 /* ViewController.swift in Sources */,
 				1348078B218D959800DD8B67 /* OCRcpt.xcdatamodeld in Sources */,
 				13480783218D959700DD8B67 /* AppDelegate.swift in Sources */,
+				0F57D20F218E640900E78CE1 /* MenuNavigationController.swift in Sources */,
 				133FE97B218E298B005ECCFE /* ScannerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
