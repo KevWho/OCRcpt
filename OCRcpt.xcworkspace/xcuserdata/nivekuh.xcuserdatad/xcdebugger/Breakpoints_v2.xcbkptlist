@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCRcpt/Checkout/BillSplit/BillSplitViewController.swift"
-            timestampString = "563030544.050217"
+            timestampString = "563032900.414755"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "payments"
             landmarkType = "24">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCRcpt/Checkout/BillSplit/BillSplitViewController.swift"
-            timestampString = "563030544.050817"
+            timestampString = "563032900.415432"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "BillSplitViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -96,6 +96,22 @@
             startingLineNumber = "26"
             endingLineNumber = "26"
             landmarkName = "setSelected(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OCRcpt/Checkout/BillSplit/BillSplitViewController.swift"
+            timestampString = "563032900.4159369"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "tappedContinue(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
