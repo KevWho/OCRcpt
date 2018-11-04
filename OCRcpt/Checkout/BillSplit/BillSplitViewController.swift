@@ -22,11 +22,27 @@ class BillSplitViewController: UIViewController {
     var _payments = [Int: [Person]]()
     var payments: [(Person, Float)] {
         get {
-            let lst = [(Person, Float)]()
-            let prices = [Int]()
+            var lst = [(Person, Float)]()
+            var prices = [Int: Float]()
             for (key, val) in _payments {
-                
+                if val.count > 0 {
+                    prices[key] = items[key].price / Float(val.count)
+                }
             }
+            for p in payers {
+                var payment = Float(0)
+                for (key, val) in _payments {
+                    if val.contains(where: { (person) -> Bool in
+                        person === p
+                    }) {
+                        payment += prices[key]!
+                    }
+                }
+                if payment > 0 {
+                    lst.append((p, payment))
+                }
+            }
+            return lst
         }
     }
     
@@ -36,6 +52,14 @@ class BillSplitViewController: UIViewController {
 
     @IBAction func tappedBack(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func tappedContinue(_ sender: Any) {
+        let alert = UIAlertController(title: "Request Payment", message: "Requesting", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Apple Pay", style: .default, handler: { (action) in
+            return
+        }))
+        alert.present(self, animated: true, completion: nil)
     }
     
     @objc func tappedItemCell(_ sender: Any) {

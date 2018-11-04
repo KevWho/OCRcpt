@@ -552,10 +552,13 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="JC7-PF-EzM"/>
                                         </constraints>
-                                        <state key="normal" title="Continue">
+                                        <state key="normal" title="Request Payment">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <state key="disabled" title="Select someone, then select an item!"/>
+                                        <connections>
+                                            <action selector="tappedContinue:" destination="NcG-qB-L6F" eventType="touchUpInside" id="mIh-a6-5Lg"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
