@@ -15,19 +15,22 @@ class MainMenuViewController: UIViewController {
     @IBOutlet var itemListTableView: UITableView!
     @IBOutlet var continueButton: RoundedButton!
     
+    var image: UIImage!
+    
     var _items = [Item]()
     var items: [Item] {
         get {
             return _items
         } set(val) {
             _items = val
-            continueButton.isEnabled = _items.count > 0
+            updateContinueButton()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        updateContinueButton()
         itemListTableView.reloadData()
     }
     
@@ -37,6 +40,17 @@ class MainMenuViewController: UIViewController {
         
         itemListTableView.isEditing = !itemListTableView.isEditing
         itemListTableView.reloadData()
+    }
+    
+    func updateContinueButton() {
+        continueButton.isEnabled = _items.count > 0
+        if continueButton.isEnabled {
+            continueButton.backgroundColor = ColorUtil.color(.blue)
+            continueButton.setTitleColor(UIColor.white, for: .normal)
+        } else {
+            continueButton.backgroundColor = ColorUtil.color(.grey)
+            continueButton.setTitleColor(ColorUtil.color(.blue), for: .normal)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -113,11 +127,10 @@ extension MainMenuViewController: NewItemCellDelegate {
     
 }
 
-
 extension MainMenuViewController: ScannerViewDelegate {
     
     func useImage(_ image: UIImage!) {
-        //Send to Corey's stuff
+        self.image = image
     }
     
 }
