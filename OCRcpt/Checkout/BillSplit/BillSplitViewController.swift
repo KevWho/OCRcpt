@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class BillSplitViewController: UIViewController {
 
@@ -39,7 +40,7 @@ class BillSplitViewController: UIViewController {
                         payment += prices[key]!
                     }
                 }
-                if payment > 0 {
+                if payment > 0 && !(p === Person.you) {
                     lst.append((p, payment))
                 }
             }
@@ -57,11 +58,32 @@ class BillSplitViewController: UIViewController {
     }
     
     @IBAction func tappedContinue(_ sender: Any) {
-        let alert = UIAlertController(title: "Request Payment", message: "Requesting", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Apple Pay", style: .default, handler: { (action) in
+        let strRequest = payments.reduce("Requesting ", { (str, tuple) -> String in
+            str + String(format: "$%.2f", tuple.1) + " from \(tuple.0.name!), "
+        })
+        let alert = UIAlertController(title: "Request Payment", message: strRequest, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "SMS / Apple Pay", style: .default, handler: { (action) in
+            let controller = MFMessageComposeViewController()
+            if MFMessageComposeViewController.canSendText() {
+                for p in self.payments {
+                    controller.body = "Send me " + String(format: "$%.2f", p.1)
+                    if let phone = p.0.phone {
+                        controller.recipients = [phone]
+                    } else if let email = p.0.email {
+                        controller.recipients = [email]
+                    } else {
+                        return
+                    }
+                    controller.messageComposeDelegate = self;
+                    self.present(controller, animated: true, completion: nil)
+                }
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Venmo", style: .destructive, handler: { (action) in
+            // No API Key :(
             return
         }))
-        alert.present(self, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
     @objc func tappedItemCell(_ sender: Any) {
@@ -161,6 +183,14 @@ extension BillSplitViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 74
+    }
+    
+}
+
+extension BillSplitViewController: MFMessageComposeViewControllerDelegate {
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        
     }
     
 }
