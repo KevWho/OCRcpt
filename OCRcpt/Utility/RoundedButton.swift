@@ -11,6 +11,8 @@ import UIKit
 class RoundedButton: UIButton {
 
     override func layoutSubviews() {
+        super.layoutSubviews()
+        
         self.layer.cornerRadius = self.bounds.height / 2
         self.clipsToBounds = true
     }

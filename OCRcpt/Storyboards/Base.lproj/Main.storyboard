@@ -13,7 +13,6 @@
         <!--Scanner View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ScannerViewController" customModule="OCRcpt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -21,7 +20,57 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TyB-p0-ZFa">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Camera Available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BE-5J-DY1">
+                                        <rect key="frame" x="108.5" y="323" width="158" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7W-cE-twJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="84Y-n4-rfz">
+                                        <rect key="frame" x="0.0" y="603" width="375" height="64"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0N-3a-eeZ">
+                                                <rect key="frame" x="16" y="17" width="34" height="30"/>
+                                                <state key="normal" title="Back"/>
+                                                <connections>
+                                                    <action selector="tappedBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G8I-Aa-KIr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpa-xz-6HR">
+                                                <rect key="frame" x="324" y="17" width="35" height="30"/>
+                                                <state key="normal" title="Snap"/>
+                                                <connections>
+                                                    <action selector="getImage" destination="BYZ-38-t0r" eventType="touchUpInside" id="OC1-1q-o5N"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.95294117649999999" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Dpa-xz-6HR" secondAttribute="trailing" constant="16" id="8w4-mM-lSl"/>
+                                            <constraint firstItem="Dpa-xz-6HR" firstAttribute="centerY" secondItem="O0N-3a-eeZ" secondAttribute="centerY" id="aHH-as-pQk"/>
+                                            <constraint firstAttribute="height" constant="64" id="cSB-sm-ZRU"/>
+                                            <constraint firstItem="O0N-3a-eeZ" firstAttribute="leading" secondItem="84Y-n4-rfz" secondAttribute="leading" constant="16" id="dRa-Lo-pDg"/>
+                                            <constraint firstItem="O0N-3a-eeZ" firstAttribute="centerY" secondItem="84Y-n4-rfz" secondAttribute="centerY" id="gxm-SZ-YXk"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="d7W-cE-twJ" secondAttribute="bottom" id="7q7-Nl-8wP"/>
+                                    <constraint firstAttribute="bottom" secondItem="84Y-n4-rfz" secondAttribute="bottom" id="8pk-5N-9Zg"/>
+                                    <constraint firstItem="84Y-n4-rfz" firstAttribute="leading" secondItem="TyB-p0-ZFa" secondAttribute="leading" id="Ks0-Ei-aeR"/>
+                                    <constraint firstItem="7BE-5J-DY1" firstAttribute="centerX" secondItem="TyB-p0-ZFa" secondAttribute="centerX" id="Mcw-sE-gVa"/>
+                                    <constraint firstItem="d7W-cE-twJ" firstAttribute="top" secondItem="TyB-p0-ZFa" secondAttribute="top" id="Mua-tm-6Xg"/>
+                                    <constraint firstAttribute="trailing" secondItem="84Y-n4-rfz" secondAttribute="trailing" id="VzX-yp-R2g"/>
+                                    <constraint firstItem="7BE-5J-DY1" firstAttribute="centerY" secondItem="TyB-p0-ZFa" secondAttribute="centerY" id="fA6-d9-HiQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="d7W-cE-twJ" secondAttribute="trailing" id="nCB-hs-EeU"/>
+                                    <constraint firstItem="d7W-cE-twJ" firstAttribute="leading" secondItem="TyB-p0-ZFa" secondAttribute="leading" id="wdv-XI-mPC"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -33,9 +82,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="previewView" destination="d7W-cE-twJ" id="PLL-Pq-aGJ"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-759" y="888"/>
+            <point key="canvasLocation" x="-759.20000000000005" y="887.40629685157433"/>
         </scene>
         <!--Main Menu View Controller-->
         <scene sceneID="PSR-QD-tL2">
@@ -150,10 +204,10 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hna-KB-yDE" customClass="RoundedButton" customModule="OCRcpt" customModuleProvider="target">
                                         <rect key="frame" x="16" y="10" width="169" height="50"/>
-                                        <color key="backgroundColor" red="0.95435811139391469" green="0.95859771573604058" blue="0.95654812028922764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.95294117647058818" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Scan"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="presentation" id="JUX-K1-NNC"/>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" identifier="scannerSegue" id="JUX-K1-NNC"/>
                                         </connections>
                                     </button>
                                 </subviews>
