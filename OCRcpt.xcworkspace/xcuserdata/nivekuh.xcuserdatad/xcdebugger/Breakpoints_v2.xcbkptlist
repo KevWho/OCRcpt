@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCRcpt/Checkout/BillSplit/BillSplitViewController.swift"
-            timestampString = "563032900.414755"
+            timestampString = "563034372.2338409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -74,13 +74,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCRcpt/Checkout/BillSplit/BillSplitViewController.swift"
-            timestampString = "563032900.415432"
+            timestampString = "563034372.234445"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
             endingLineNumber = "115"
-            landmarkName = "BillSplitViewController"
-            landmarkType = "3">
+            landmarkName = "tappedItemCell(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCRcpt/Checkout/BillSplit/PayerCollectionViewCell.swift"
-            timestampString = "563027963.699152"
+            timestampString = "563033965.426646"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OCRcpt/Checkout/BillSplit/BillSplitViewController.swift"
-            timestampString = "563032900.4159369"
+            timestampString = "563034372.23489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"

@@ -66,6 +66,8 @@ class PersonDataStore {
         allPersons.append(Person(name: "Bob", phone: "555123456", email: nil, image: nil))
         allPersons.append(Person(name: "Candice", phone: nil, email: "name@email.com", image: nil))
         allPersons.append(Person(name: "Dennis", phone: nil, email: nil, image: nil))
+        allPersons.append(Person(name: "Test Data.", phone: "5555555555", email: nil, image: nil))
+        allPersons.append(Person(name: "Plan to fetch from contacts.", phone: "5555555555", email: nil, image: nil))
         allPersons[0].favorited = true
     }
 }
