@@ -1,4 +1,3 @@
 {
-  "RESULT_TOPIC": "ocr_result",
   "RESULT_BUCKET": "text_out_ocrcpt"
 }
