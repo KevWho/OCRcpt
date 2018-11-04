@@ -10,6 +10,12 @@ import Foundation
 import UIKit
 
 class Person {
+
+    static let you: Person = {
+        let singleton = Person(name: "You", phone: nil, email: nil, image: nil)
+        return singleton
+    }()
+    
     var name: String!
     var phone: String?
     var email: String?

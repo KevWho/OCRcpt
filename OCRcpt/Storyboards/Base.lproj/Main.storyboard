@@ -424,7 +424,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BAL-89-Lkp">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BAL-89-Lkp">
                                 <rect key="frame" x="0.0" y="567" width="375" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -444,7 +444,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RgD-Bt-tgu">
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RgD-Bt-tgu">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="xGs-HZ-b3b">
@@ -489,7 +489,7 @@
                                     <outlet property="delegate" destination="NcG-qB-L6F" id="qQu-QL-qsX"/>
                                 </connections>
                             </collectionView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RbX-T2-esD">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RbX-T2-esD">
                                 <rect key="frame" x="0.0" y="64" width="375" height="453"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -521,9 +521,11 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="72r-Ne-T6J" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2wr-xx-WiQ" secondAttribute="trailing" constant="8" symbolic="YES" id="5g5-aJ-deL"/>
                                                 <constraint firstItem="Sr2-kn-Zy1" firstAttribute="leading" secondItem="aX5-vN-nXa" secondAttribute="leadingMargin" id="AuE-B6-FWv"/>
                                                 <constraint firstItem="Sr2-kn-Zy1" firstAttribute="bottom" secondItem="aX5-vN-nXa" secondAttribute="bottomMargin" id="DfY-K5-Ub0"/>
                                                 <constraint firstItem="2wr-xx-WiQ" firstAttribute="top" secondItem="aX5-vN-nXa" secondAttribute="topMargin" id="Hau-fd-Mnk"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Sr2-kn-Zy1" secondAttribute="trailing" constant="20" symbolic="YES" id="Zbo-DQ-CNQ"/>
                                                 <constraint firstItem="72r-Ne-T6J" firstAttribute="trailing" secondItem="aX5-vN-nXa" secondAttribute="trailingMargin" id="b02-F5-fao"/>
                                                 <constraint firstItem="2wr-xx-WiQ" firstAttribute="leading" secondItem="aX5-vN-nXa" secondAttribute="leadingMargin" id="hjb-Hp-siV"/>
                                                 <constraint firstItem="72r-Ne-T6J" firstAttribute="centerY" secondItem="aX5-vN-nXa" secondAttribute="centerY" id="ikV-04-ZYw"/>
@@ -544,18 +546,24 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L3C-hm-ZMn">
                                 <rect key="frame" x="0.0" y="517" width="375" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag people to the items they will pay for!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfw-D6-Jcn">
-                                        <rect key="frame" x="28.5" y="14.5" width="318" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.12549019610000001" green="0.65490196079999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9j-TI-uuR" customClass="ContinueButton" customModule="OCRcpt" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="0.0" width="359" height="50"/>
+                                        <color key="backgroundColor" red="0.12549019610000001" green="0.65490196079999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="JC7-PF-EzM"/>
+                                        </constraints>
+                                        <state key="normal" title="Continue">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="disabled" title="Select someone, then select an item!"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Gfw-D6-Jcn" firstAttribute="centerX" secondItem="L3C-hm-ZMn" secondAttribute="centerX" id="29N-ed-SW9"/>
+                                    <constraint firstItem="B9j-TI-uuR" firstAttribute="leading" secondItem="L3C-hm-ZMn" secondAttribute="leading" constant="8" id="OBa-ha-psa"/>
+                                    <constraint firstItem="B9j-TI-uuR" firstAttribute="centerY" secondItem="L3C-hm-ZMn" secondAttribute="centerY" id="Wbu-Kt-yiv"/>
+                                    <constraint firstAttribute="trailing" secondItem="B9j-TI-uuR" secondAttribute="trailing" constant="8" id="XSa-Ds-Pnf"/>
                                     <constraint firstAttribute="height" constant="50" id="kMl-Ce-nZe"/>
-                                    <constraint firstItem="Gfw-D6-Jcn" firstAttribute="centerY" secondItem="L3C-hm-ZMn" secondAttribute="centerY" id="pG1-Zj-vYB"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -583,6 +591,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="continueButton" destination="B9j-TI-uuR" id="uzT-g2-EeX"/>
                         <outlet property="itemsTableView" destination="RbX-T2-esD" id="Oh6-E4-mVB"/>
                         <outlet property="payersCollectionView" destination="BAL-89-Lkp" id="nPB-us-Isi"/>
                     </connections>
