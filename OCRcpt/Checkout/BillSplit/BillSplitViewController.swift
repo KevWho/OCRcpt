@@ -28,6 +28,7 @@ class BillSplitViewController: UIViewController {
                 
             }
         }
+        
     }
     
     override func viewDidLoad() {
