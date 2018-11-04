@@ -25,6 +25,9 @@
 		13A2DB52218EC9A000CEFB7C /* PersonSplitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A2DB51218EC9A000CEFB7C /* PersonSplitTableViewCell.swift */; };
 		13A2DB54218EDED800CEFB7C /* PersonHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A2DB53218EDED800CEFB7C /* PersonHeaderTableViewCell.swift */; };
 		13A2DB58218EEFCC00CEFB7C /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A2DB57218EEFCC00CEFB7C /* ContinueButton.swift */; };
+		13A2DB5A218EF5DB00CEFB7C /* BillSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A2DB59218EF5DB00CEFB7C /* BillSplitViewController.swift */; };
+		13A2DB5E218EFAEA00CEFB7C /* PayerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A2DB5D218EFAEA00CEFB7C /* PayerCollectionViewCell.swift */; };
+		13A2DB60218EFEF400CEFB7C /* ItemPayersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A2DB5F218EFEF400CEFB7C /* ItemPayersTableViewCell.swift */; };
 		57EC2F1B64EAF2FBFA6DA1A8 /* Pods_OCRcpt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A9A26A6273199892446C90 /* Pods_OCRcpt.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,9 +51,12 @@
 		13A2DB4A218EB19900CEFB7C /* ColorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
 		13A2DB4C218EB3EE00CEFB7C /* PersonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListViewController.swift; sourceTree = "<group>"; };
 		13A2DB4F218EBE4B00CEFB7C /* PersonDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDataStore.swift; sourceTree = "<group>"; };
-		13A2DB51218EC9A000CEFB7C /* PersonSplitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersonSplitTableViewCell.swift; path = OCRcpt/Checkout/PersonSplitTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		13A2DB51218EC9A000CEFB7C /* PersonSplitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersonSplitTableViewCell.swift; path = OCRcpt/Checkout/PersonSelect/PersonSplitTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		13A2DB53218EDED800CEFB7C /* PersonHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		13A2DB57218EEFCC00CEFB7C /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
+		13A2DB59218EF5DB00CEFB7C /* BillSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillSplitViewController.swift; sourceTree = "<group>"; };
+		13A2DB5D218EFAEA00CEFB7C /* PayerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayerCollectionViewCell.swift; sourceTree = "<group>"; };
+		13A2DB5F218EFEF400CEFB7C /* ItemPayersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPayersTableViewCell.swift; sourceTree = "<group>"; };
 		5784AD3EAEADD74669A1F026 /* Pods-OCRcpt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCRcpt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OCRcpt/Pods-OCRcpt.debug.xcconfig"; sourceTree = "<group>"; };
 		5E5F9810E7356CE5F62B8416 /* Pods-OCRcpt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCRcpt.debug.xcconfig"; path = "Target Support Files/Pods-OCRcpt/Pods-OCRcpt.debug.xcconfig"; sourceTree = "<group>"; };
 		C4FA1A4D76BF185D1D12D37A /* Pods-OCRcpt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCRcpt.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCRcpt/Pods-OCRcpt.release.xcconfig"; sourceTree = "<group>"; };
@@ -102,9 +108,8 @@
 		13389F32218E9E5A0013CD27 /* Checkout */ = {
 			isa = PBXGroup;
 			children = (
-				13A2DB53218EDED800CEFB7C /* PersonHeaderTableViewCell.swift */,
-				13A2DB51218EC9A000CEFB7C /* PersonSplitTableViewCell.swift */,
-				13A2DB4C218EB3EE00CEFB7C /* PersonListViewController.swift */,
+				13A2DB5B218EFAA100CEFB7C /* PersonSelect */,
+				13A2DB5C218EFABB00CEFB7C /* BillSplit */,
 			);
 			path = Checkout;
 			sourceTree = "<group>";
@@ -160,6 +165,26 @@
 				13A2DB4F218EBE4B00CEFB7C /* PersonDataStore.swift */,
 			);
 			path = DataStore;
+			sourceTree = "<group>";
+		};
+		13A2DB5B218EFAA100CEFB7C /* PersonSelect */ = {
+			isa = PBXGroup;
+			children = (
+				13A2DB53218EDED800CEFB7C /* PersonHeaderTableViewCell.swift */,
+				13A2DB51218EC9A000CEFB7C /* PersonSplitTableViewCell.swift */,
+				13A2DB4C218EB3EE00CEFB7C /* PersonListViewController.swift */,
+			);
+			path = PersonSelect;
+			sourceTree = "<group>";
+		};
+		13A2DB5C218EFABB00CEFB7C /* BillSplit */ = {
+			isa = PBXGroup;
+			children = (
+				13A2DB59218EF5DB00CEFB7C /* BillSplitViewController.swift */,
+				13A2DB5D218EFAEA00CEFB7C /* PayerCollectionViewCell.swift */,
+				13A2DB5F218EFEF400CEFB7C /* ItemPayersTableViewCell.swift */,
+			);
+			path = BillSplit;
 			sourceTree = "<group>";
 		};
 		21F2E37AF5A572D76D4DBD2E /* Pods */ = {
@@ -391,10 +416,13 @@
 			files = (
 				0F270A44218E5EBB004B1558 /* MainMenuViewController.swift in Sources */,
 				1348078B218D959800DD8B67 /* OCRcpt.xcdatamodeld in Sources */,
+				13A2DB60218EFEF400CEFB7C /* ItemPayersTableViewCell.swift in Sources */,
 				13A2DB52218EC9A000CEFB7C /* PersonSplitTableViewCell.swift in Sources */,
+				13A2DB5E218EFAEA00CEFB7C /* PayerCollectionViewCell.swift in Sources */,
 				13A2DB50218EBE4B00CEFB7C /* PersonDataStore.swift in Sources */,
 				13480783218D959700DD8B67 /* AppDelegate.swift in Sources */,
 				13A2DB4B218EB19900CEFB7C /* ColorUtil.swift in Sources */,
+				13A2DB5A218EF5DB00CEFB7C /* BillSplitViewController.swift in Sources */,
 				13A2DB4D218EB3EE00CEFB7C /* PersonListViewController.swift in Sources */,
 				13389F31218E8CFD0013CD27 /* NewItemTableViewCell.swift in Sources */,
 				13389F2F218E811E0013CD27 /* RoundedButton.swift in Sources */,

@@ -16,6 +16,8 @@ class PersonListViewController: UIViewController {
     var searchBar: UISearchBar!
     var filter: String?
     
+    var items: [Item]!
+    
     var data = [ ("Favorites", PersonDataStore.shared.favoritedPersons),
                  ("Other", PersonDataStore.shared.nonfavoritedPersons) ]
     var persons: [(String, [Person])] {
@@ -57,6 +59,15 @@ class PersonListViewController: UIViewController {
 
     @IBAction func tappedBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "billSplitSegue" {
+            if let vc = segue.destination as? BillSplitViewController {
+                vc.items = self.items
+                vc.payers = self.selectedPersons
+            }
+        }
     }
 }
 

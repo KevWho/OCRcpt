@@ -46,6 +46,10 @@ class MainMenuViewController: UIViewController {
             if let vc = segue.destination as? ScannerViewController {
                 vc.delegate = self
             }
+        } else if segue.identifier == "peopleSelectSegue" {
+            if let vc = segue.destination as? PersonListViewController {
+                vc.items = self.items
+            }
         }
     }
     
