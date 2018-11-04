@@ -27,7 +27,6 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         itemListTableView.reloadData()
     }
@@ -38,6 +37,14 @@ class MainMenuViewController: UIViewController {
         
         itemListTableView.isEditing = !itemListTableView.isEditing
         itemListTableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "scannerSegue" {
+            if let vc = segue.destination as? ScannerViewController {
+                vc.delegate = self
+            }
+        }
     }
     
 }
@@ -87,6 +94,10 @@ extension MainMenuViewController: UITableViewDelegate, UITableViewDataSource {
         return indexPath.row < items.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
 }
 
 extension MainMenuViewController: NewItemCellDelegate {
@@ -98,6 +109,15 @@ extension MainMenuViewController: NewItemCellDelegate {
             items.append(item)
             itemListTableView.reloadData()
         }
+    }
+    
+}
+
+
+extension MainMenuViewController: ScannerViewDelegate {
+    
+    func useImage(_ image: UIImage!) {
+        //Send to Corey's stuff
     }
     
 }

@@ -85,6 +85,21 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		13389F32218E9E5A0013CD27 /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Checkout;
+			sourceTree = "<group>";
+		};
+		13389F33218E9F040013CD27 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				133FE97A218E298B005ECCFE /* ScannerViewController.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
 		13480776218D959700DD8B67 = {
 			isa = PBXGroup;
 			children = (
@@ -108,8 +123,9 @@
 			children = (
 				133FE97C218E2DC3005ECCFE /* OCRcpt.entitlements */,
 				13480782218D959700DD8B67 /* AppDelegate.swift */,
-				133FE97A218E298B005ECCFE /* ScannerViewController.swift */,
 				13389F2D218E80E30013CD27 /* Storyboards */,
+				13389F32218E9E5A0013CD27 /* Checkout */,
+				13389F33218E9F040013CD27 /* Camera */,
 				0F57D212218E6A0800E78CE1 /* Receipt */,
 				13389F2C218E80B80013CD27 /* Utility */,
 				0F57D20E218E640900E78CE1 /* MenuNavigationController.swift */,
