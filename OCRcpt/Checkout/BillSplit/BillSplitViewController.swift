@@ -27,26 +27,26 @@ class BillSplitViewController: UIViewController {
     }
 }
 
-extension BillSplitViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.payers.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
-    }
-    
-}
-
-extension BillSplitViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
-    
-}
+//extension BillSplitViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+//    
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return self.payers.count
+//    }
+//    
+////    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+////        <#code#>
+////    }
+////
+//}
+//
+//extension BillSplitViewController: UITableViewDelegate, UITableViewDataSource {
+//    
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return self.items.count
+//    }
+//    
+////    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+////        <#code#>
+////    }
+//    
+//}
