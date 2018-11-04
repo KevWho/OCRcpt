@@ -3,6 +3,7 @@
 //  OCRcpt
 //
 //  Created by Kevin Hu on 11/4/18.
+//  Filled in by Corey Hu
 //  Copyright © 2018 hu. All rights reserved.
 //
 
