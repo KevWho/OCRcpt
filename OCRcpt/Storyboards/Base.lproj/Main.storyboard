@@ -199,7 +199,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wi0-EP-9aC">
                                 <rect key="frame" x="0.0" y="597" width="375" height="70"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxt-Bn-8H5" customClass="RoundedButton" customModule="OCRcpt" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxt-Bn-8H5" customClass="ContinueButton" customModule="OCRcpt" customModuleProvider="target">
                                         <rect key="frame" x="190.5" y="10" width="168.5" height="50"/>
                                         <color key="backgroundColor" red="0.12549019610000001" green="0.65490196079999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -272,10 +272,10 @@
             </objects>
             <point key="canvasLocation" x="-759.20000000000005" y="173.16341829085459"/>
         </scene>
-        <!--Bill Split View Controller-->
+        <!--Person List View Controller-->
         <scene sceneID="m5A-F6-ePs">
             <objects>
-                <viewController id="1qk-Dk-IC2" customClass="BillSplitViewController" customModule="OCRcpt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1qk-Dk-IC2" customClass="PersonListViewController" customModule="OCRcpt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ila-Xu-vFd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -353,7 +353,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6g8-Bx-ODj">
                                 <rect key="frame" x="0.0" y="597" width="375" height="70"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lof-Ll-s0j" customClass="RoundedButton" customModule="OCRcpt" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lof-Ll-s0j" customClass="ContinueButton" customModule="OCRcpt" customModuleProvider="target">
                                         <rect key="frame" x="18" y="10" width="339" height="50"/>
                                         <color key="backgroundColor" red="0.12549019610000001" green="0.65490196079999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -398,6 +398,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="continueButton" destination="lof-Ll-s0j" id="Mrj-S7-qrZ"/>
                         <outlet property="personTableView" destination="Dvd-vf-lMj" id="VM1-qJ-DVj"/>
                         <outlet property="searchDisplayController" destination="WHf-d0-CFH" id="h3P-Wr-OTF"/>
                     </connections>

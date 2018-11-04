@@ -8,14 +8,23 @@
 
 import UIKit
 
-class ContinueButton: UIButton {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+class ContinueButton: RoundedButton {
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        update(enabled: isEnabled)
     }
-    */
-
+    
+    func update(enabled: Bool) {
+        isEnabled = enabled
+        if isEnabled {
+            self.backgroundColor = ColorUtil.color(.blue)
+            self.setTitleColor(UIColor.white, for: .normal)
+        } else {
+            self.backgroundColor = ColorUtil.color(.grey)
+            self.setTitleColor(ColorUtil.color(.blue), for: .normal)
+        }
+    }
+    
 }

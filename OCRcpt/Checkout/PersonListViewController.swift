@@ -1,5 +1,5 @@
 //
-//  BillSplitViewController.swift
+//  PersonListViewController.swift
 //  OCRcpt
 //
 //  Created by Kevin Hu on 11/3/18.
@@ -8,12 +8,14 @@
 
 import UIKit
 
-class BillSplitViewController: UIViewController {
+class PersonListViewController: UIViewController {
 
     @IBOutlet var personTableView: UITableView!
+    @IBOutlet var continueButton: ContinueButton!
     
     var searchBar: UISearchBar!
     var filter: String?
+    
     var data = [ ("Favorites", PersonDataStore.shared.favoritedPersons),
                  ("Other", PersonDataStore.shared.nonfavoritedPersons) ]
     var persons: [(String, [Person])] {
@@ -31,6 +33,17 @@ class BillSplitViewController: UIViewController {
             return lst
         }
     }
+    var selectedPersons: [Person] {
+        get {
+            var lst = [Person]()
+            for (_, p) in data {
+                lst.append(contentsOf: p.filter({ (person) -> Bool in
+                    person.selected
+                }))
+            }
+            return lst
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,17 +57,10 @@ class BillSplitViewController: UIViewController {
 
     @IBAction func tappedBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
-        
-        var selectedPersons = [Person]()
-        for (_, p) in data {
-            selectedPersons.append(contentsOf: p.filter({ (person) -> Bool in
-                person.selected
-            }))
-        }
     }
 }
 
-extension BillSplitViewController: UITableViewDelegate, UITableViewDataSource {
+extension PersonListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return persons.count
@@ -72,6 +78,7 @@ extension BillSplitViewController: UITableViewDelegate, UITableViewDataSource {
             cell.profileImg.image = img
         }
         cell.nameLabel.text = person.name
+        cell.person = person
         
         return cell
     }
@@ -92,9 +99,17 @@ extension BillSplitViewController: UITableViewDelegate, UITableViewDataSource {
         return 44
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        continueButton.update(enabled: selectedPersons.count > 0)
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        continueButton.update(enabled: selectedPersons.count > 0)
+    }
+    
 }
 
-extension BillSplitViewController: UISearchBarDelegate {
+extension PersonListViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filter = searchText

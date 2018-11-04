@@ -13,7 +13,7 @@ import SideMenu
 class MainMenuViewController: UIViewController {
     
     @IBOutlet var itemListTableView: UITableView!
-    @IBOutlet var continueButton: RoundedButton!
+    @IBOutlet var continueButton: ContinueButton!
     
     var image: UIImage!
     
@@ -23,14 +23,13 @@ class MainMenuViewController: UIViewController {
             return _items
         } set(val) {
             _items = val
-            updateContinueButton()
+            continueButton.update(enabled: _items.count > 0)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateContinueButton()
         itemListTableView.reloadData()
     }
     
@@ -40,17 +39,6 @@ class MainMenuViewController: UIViewController {
         
         itemListTableView.isEditing = !itemListTableView.isEditing
         itemListTableView.reloadData()
-    }
-    
-    func updateContinueButton() {
-        continueButton.isEnabled = _items.count > 0
-        if continueButton.isEnabled {
-            continueButton.backgroundColor = ColorUtil.color(.blue)
-            continueButton.setTitleColor(UIColor.white, for: .normal)
-        } else {
-            continueButton.backgroundColor = ColorUtil.color(.grey)
-            continueButton.setTitleColor(ColorUtil.color(.blue), for: .normal)
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
