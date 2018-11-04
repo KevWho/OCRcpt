@@ -161,18 +161,40 @@ extension MainMenuViewController: ScannerViewDelegate {
     }
     
     func downloadFromCloud(filename: String) {
-        let storage = Storage.storage()
+        let storage = Storage.storage(url:"gs://ocrcpt-server.appspot.com")
         // Create a storage reference from our storage service
-        let fileRef = storage.reference(forURL: "gs://ocrcpt-server.appspot.com/\(filename)_items.json")
+        let storageRef = storage.reference()
+        let fileRef = storageRef.child("\(filename)_items.json")
 
         // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
         fileRef.getData(maxSize: 1 * 2056 * 2056) { data, error in
             if error != nil {
                 // Uh-oh, an error occurred!
+                print(error)
                 return
             } else {
-                let json = try? JSONSerialization.jsonObject(with: data!)
+                let json = try? JSONSerialization.jsonObject(with: data!, options: [])
                 print(json as Any)
+                
+                if let dictionary = json as? [String: Any] {
+                    
+                    if let i = dictionary["items"] as? [String: String?] {
+                        // access individual value in dictionary
+                        for (key, value) in i {
+                            // access all key / value pairs in dictionary
+                            self.items.append(Item(name: value ?? "Enter Name", price: Float(key), unit: nil))
+                            self.itemListTableView.reloadData()
+                            
+                        }
+                    }
+//                    if let s = dictionary["special"] as? [String: String] {
+//                        for (key, value) in i {
+//                            // access all key / value pairs in dictionary
+//                            items.append(Item(name: value, price: Float(key), unit: nil))
+//                        }
+//                    }
+                }
+                
             }
         }
 
