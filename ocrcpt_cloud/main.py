@@ -161,6 +161,8 @@ def process_image(file, context):
     detect_text(bucket, name)
 
     print('File {} processed.'.format(file['name']))
+
+    
 # [END functions_ocr_process]
 
 
