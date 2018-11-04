@@ -22,8 +22,8 @@ class Item: NSObject {
     
     func getPriceStr() -> String! {
         if let sign = unit {
-            return "\(sign)\(String(describing: price))"
+            return "\(sign)\(price!)"
         }
-        return "\(String(describing: price))"
+        return "\(price!)"
     }
 }

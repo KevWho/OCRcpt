@@ -9,7 +9,6 @@ target 'OCRcpt' do
   use_frameworks!
 
   # Pods for OCRcpt
-  pod 'SwiftOCR', :git => 'https://github.com/mkonapelsky/SwiftOCR.git', :commit => '18cb5d8ed0c84e092897b2aa86d4e5f152fa206f'
   pod 'BlinkReceipt', '~> 1.0'
   pod 'SideMenu'
 

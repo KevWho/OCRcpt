@@ -11,9 +11,10 @@
 		0F57D20F218E640900E78CE1 /* MenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57D20E218E640900E78CE1 /* MenuNavigationController.swift */; };
 		0F57D211218E6A0300E78CE1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57D210218E6A0300E78CE1 /* Item.swift */; };
 		0F57D214218E6D1700E78CE1 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57D213218E6D1700E78CE1 /* ItemTableViewCell.swift */; };
+		13389F2F218E811E0013CD27 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13389F2E218E811E0013CD27 /* RoundedButton.swift */; };
+		13389F31218E8CFD0013CD27 /* NewItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13389F30218E8CFD0013CD27 /* NewItemTableViewCell.swift */; };
 		133FE97B218E298B005ECCFE /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133FE97A218E298B005ECCFE /* ScannerViewController.swift */; };
 		13480783218D959700DD8B67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13480782218D959700DD8B67 /* AppDelegate.swift */; };
-		13480785218D959800DD8B67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13480784218D959800DD8B67 /* ViewController.swift */; };
 		13480788218D959800DD8B67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13480786218D959800DD8B67 /* Main.storyboard */; };
 		1348078B218D959800DD8B67 /* OCRcpt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13480789218D959800DD8B67 /* OCRcpt.xcdatamodeld */; };
 		1348078D218D959800DD8B67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1348078C218D959800DD8B67 /* Assets.xcassets */; };
@@ -27,11 +28,12 @@
 		0F57D20E218E640900E78CE1 /* MenuNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuNavigationController.swift; sourceTree = "<group>"; };
 		0F57D210218E6A0300E78CE1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		0F57D213218E6D1700E78CE1 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		13389F2E218E811E0013CD27 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		13389F30218E8CFD0013CD27 /* NewItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemTableViewCell.swift; sourceTree = "<group>"; };
 		133FE97A218E298B005ECCFE /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		133FE97C218E2DC3005ECCFE /* OCRcpt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OCRcpt.entitlements; sourceTree = "<group>"; };
 		1348077F218D959700DD8B67 /* OCRcpt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCRcpt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13480782218D959700DD8B67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		13480784218D959800DD8B67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		13480787218D959800DD8B67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1348078A218D959800DD8B67 /* OCRcpt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OCRcpt.xcdatamodel; sourceTree = "<group>"; };
 		1348078C218D959800DD8B67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,8 +63,26 @@
 				0F270A43218E5EBB004B1558 /* MainMenuViewController.swift */,
 				0F57D210218E6A0300E78CE1 /* Item.swift */,
 				0F57D213218E6D1700E78CE1 /* ItemTableViewCell.swift */,
+				13389F30218E8CFD0013CD27 /* NewItemTableViewCell.swift */,
 			);
 			path = Receipt;
+			sourceTree = "<group>";
+		};
+		13389F2C218E80B80013CD27 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				13389F2E218E811E0013CD27 /* RoundedButton.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		13389F2D218E80E30013CD27 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				13480786218D959800DD8B67 /* Main.storyboard */,
+				1348078E218D959800DD8B67 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		13480776218D959700DD8B67 = {
@@ -88,13 +108,12 @@
 			children = (
 				133FE97C218E2DC3005ECCFE /* OCRcpt.entitlements */,
 				13480782218D959700DD8B67 /* AppDelegate.swift */,
-				13480784218D959800DD8B67 /* ViewController.swift */,
 				133FE97A218E298B005ECCFE /* ScannerViewController.swift */,
+				13389F2D218E80E30013CD27 /* Storyboards */,
 				0F57D212218E6A0800E78CE1 /* Receipt */,
+				13389F2C218E80B80013CD27 /* Utility */,
 				0F57D20E218E640900E78CE1 /* MenuNavigationController.swift */,
-				13480786218D959800DD8B67 /* Main.storyboard */,
 				1348078C218D959800DD8B67 /* Assets.xcassets */,
-				1348078E218D959800DD8B67 /* LaunchScreen.storyboard */,
 				13480791218D959800DD8B67 /* Info.plist */,
 				13480789218D959800DD8B67 /* OCRcpt.xcdatamodeld */,
 			);
@@ -301,7 +320,6 @@
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SimpleKeychain/SimpleKeychain.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftOCR/SwiftOCR.framework",
 				"${BUILT_PRODUCTS_DIR}/libextobjc/libextobjc.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -315,7 +333,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimpleKeychain.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftOCR.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libextobjc.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,9 +348,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F270A44218E5EBB004B1558 /* MainMenuViewController.swift in Sources */,
-				13480785218D959800DD8B67 /* ViewController.swift in Sources */,
 				1348078B218D959800DD8B67 /* OCRcpt.xcdatamodeld in Sources */,
 				13480783218D959700DD8B67 /* AppDelegate.swift in Sources */,
+				13389F31218E8CFD0013CD27 /* NewItemTableViewCell.swift in Sources */,
+				13389F2F218E811E0013CD27 /* RoundedButton.swift in Sources */,
 				0F57D214218E6D1700E78CE1 /* ItemTableViewCell.swift in Sources */,
 				0F57D211218E6A0300E78CE1 /* Item.swift in Sources */,
 				0F57D20F218E640900E78CE1 /* MenuNavigationController.swift in Sources */,
