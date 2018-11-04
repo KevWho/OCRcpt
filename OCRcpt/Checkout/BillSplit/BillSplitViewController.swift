@@ -190,7 +190,7 @@ extension BillSplitViewController: UITableViewDelegate, UITableViewDataSource {
 extension BillSplitViewController: MFMessageComposeViewControllerDelegate {
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
-        
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

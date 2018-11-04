@@ -49,6 +49,10 @@ class MainMenuViewController: UIViewController {
             }
         } else if segue.identifier == "peopleSelectSegue" {
             if let vc = segue.destination as? PersonListViewController {
+                if itemListTableView.isEditing {
+                    tappedEdit(UIBarButtonItem())
+                }
+                
                 vc.items = self.items
             }
         }
