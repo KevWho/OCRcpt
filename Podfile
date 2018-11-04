@@ -11,5 +11,7 @@ target 'OCRcpt' do
   # Pods for OCRcpt
   pod 'BlinkReceipt', '~> 1.0'
   pod 'SideMenu'
+  pod 'Firebase/Core'
+  pod 'Firebase/Storage'
 
 end

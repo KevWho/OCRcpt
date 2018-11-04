@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SideMenu
+import Firebase
 
 class MainMenuViewController: UIViewController {
     
@@ -123,6 +124,67 @@ extension MainMenuViewController: ScannerViewDelegate {
     
     func useImage(_ image: UIImage!) {
         self.image = image
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        self.upload(filename: formatter.string(from: Date()))
+        
+        //Use self.image and send it to the URL request
     }
     
+    func upload(filename: String){
+        var fn = filename
+        fn = "100"
+        
+        let imageData = self.image.pngData()
+        
+        let request = NSMutableURLRequest(url: NSURL(string: "https://www.googleapis.com/upload/storage/v1/b/image_in_ocrcpt/o?uploadType=media&name=\(fn)")! as URL)
+        let session = URLSession.shared
+        request.httpMethod = "POST"
+        
+        
+        request.httpBody = imageData
+        request.addValue("image/jpeg", forHTTPHeaderField: "Content-Type")
+        //request.addValue("application/json", forHTTPHeaderField: "Authorization")
+        
+        let task = session.dataTask(with: request as URLRequest, completionHandler: {data, response, error -> Void in
+            print("Response: \(String(describing: response))")
+            self.download(filename: fn)
+        })
+        
+        _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.download), userInfo: fn, repeats: false)
+        
+        
+        task.resume()
+        
+    }
+    
+    func downloadFromCloud() {
+        Storage
+        let islandRef = storageRef.child("images/island.jpg")
+        
+        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+        islandRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                // Uh-oh, an error occurred!
+            } else {
+                // Data for "images/island.jpg" is returned
+                let image = UIImage(data: data!)
+            }
+        }
+        
+    }
+    @objc func download(filename: String){
+        let request = NSMutableURLRequest(url: NSURL(string: "https://www.googleapis.com/storage/v1/b/text_out_ocrcpt/o/\(filename)?alt=media")! as URL)
+        let session = URLSession.shared
+        request.httpMethod = "GET"
+        
+        //request.addValue("application/json", forHTTPHeaderField: "Authorization")
+        
+        let task = session.dataTask(with: request as URLRequest, completionHandler: {data, response, error -> Void in
+            print("Response: \(String(describing: response))")
+        })
+        
+    }
+ 
 }

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DA73D400CCBE5B9BFB6F57961ED1E8AD"
-               BlueprintName = "SwiftOCR"
+               BlueprintIdentifier = "5DB24E023497E95328602E0A1BC93338"
+               BlueprintName = "FirebaseStorage"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "SwiftOCR.framework">
+               BuildableName = "FirebaseStorage.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

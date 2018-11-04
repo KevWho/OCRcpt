@@ -11,6 +11,7 @@
 		0F57D20F218E640900E78CE1 /* MenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57D20E218E640900E78CE1 /* MenuNavigationController.swift */; };
 		0F57D211218E6A0300E78CE1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57D210218E6A0300E78CE1 /* Item.swift */; };
 		0F57D214218E6D1700E78CE1 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57D213218E6D1700E78CE1 /* ItemTableViewCell.swift */; };
+		0FAA5677218F1ACD0055F1E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FAA5676218F1ACD0055F1E7 /* GoogleService-Info.plist */; };
 		13389F2F218E811E0013CD27 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13389F2E218E811E0013CD27 /* RoundedButton.swift */; };
 		13389F31218E8CFD0013CD27 /* NewItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13389F30218E8CFD0013CD27 /* NewItemTableViewCell.swift */; };
 		133FE97B218E298B005ECCFE /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133FE97A218E298B005ECCFE /* ScannerViewController.swift */; };
@@ -37,6 +38,7 @@
 		0F57D20E218E640900E78CE1 /* MenuNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuNavigationController.swift; sourceTree = "<group>"; };
 		0F57D210218E6A0300E78CE1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		0F57D213218E6D1700E78CE1 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		0FAA5676218F1ACD0055F1E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		13389F2E218E811E0013CD27 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		13389F30218E8CFD0013CD27 /* NewItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemTableViewCell.swift; sourceTree = "<group>"; };
 		133FE97A218E298B005ECCFE /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		13480776218D959700DD8B67 = {
 			isa = PBXGroup;
 			children = (
+				0FAA5676218F1ACD0055F1E7 /* GoogleService-Info.plist */,
 				13480781218D959700DD8B67 /* OCRcpt */,
 				13480780218D959700DD8B67 /* Products */,
 				21F2E37AF5A572D76D4DBD2E /* Pods */,
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13480790218D959800DD8B67 /* LaunchScreen.storyboard in Resources */,
+				0FAA5677218F1ACD0055F1E7 /* GoogleService-Info.plist in Resources */,
 				1348078D218D959800DD8B67 /* Assets.xcassets in Resources */,
 				13480788218D959800DD8B67 /* Main.storyboard in Resources */,
 			);
@@ -384,10 +388,13 @@
 				"${PODS_ROOT}/BlinkReceipt/BlinkReceipt.framework",
 				"${BUILT_PRODUCTS_DIR}/CHCSVParser/CHCSVParser.framework",
 				"${BUILT_PRODUCTS_DIR}/GPUImage/GPUImage.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SimpleKeychain/SimpleKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/libextobjc/libextobjc.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -397,10 +404,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlinkReceipt.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CHCSVParser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GPUImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimpleKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libextobjc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
