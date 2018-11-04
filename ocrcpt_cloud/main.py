@@ -16,11 +16,45 @@ storage_client = storage.Client()
 
 project_id = os.environ['GCP_PROJECT']
 
+special_words = ['subtotal', 'tax', 'total']
+
 with open('config.json') as f:
     data = f.read()
 config = json.loads(data)
 # [END functions_ocr_setup]
 
+
+def valid_line_match(price_bounds, word_bounds):
+    price_min, price_max = price_bounds
+    word_min, word_max = word_bounds
+
+    if word_min > price_max or word_max < price_min:
+        return 0
+    else:
+        overlap = min(price_max - word_min, word_max - price_min)
+        overlap_percent = overlap / (price_max - price_min) 
+        if overlap_percent > .25:
+            return overlap_percent
+        else:
+            return 0
+
+def dict_to_json(d):
+    result = "{\n"
+
+    for key, value in d.items():
+        result += "\"{}\":\"{}\",\n".format(key, value.strip())
+    
+    result = result[:-2]
+    result += "}"
+    return result
+
+def combine_to_json(items, special):
+    result = "{\n"
+    result += "\"items\": {},\n".format(items)
+    result += "\"special\": {}\n".format(special)
+    result += "}"
+    return result
+    
 
 
 # [START functions_ocr_detect]
@@ -34,36 +68,69 @@ def detect_text(bucket, filename):
     })
     annotations = text_detection_response.full_text_annotation
 
+    price_pattern = r"\d*\.\d\d"
+    price_dict = {}
+    word_dict = {}
+    word_keys = []
+
+    i = 0
     text = ""
-    print('ALRIGHT ALRIGHT ALRIGHT')
+
+    price_word_pairing = {}
+    special_dict = {}
+    
     for page in annotations.pages:
         for block in page.blocks:
-            print(type(block))
+            # text += block.blockType
+            for paragraph in block.paragraphs:
+                for word in paragraph.words:
+                    word_text = ""
+                    for symbol in word.symbols:
+                        word_text += symbol.text
 
+                    bbox = word.bounding_box
 
+                    ys = [vertex.x for vertex in bbox.vertices]
+                    min_y = min(ys)
+                    max_y = max(ys)
+                    
+                    # If we found a price
+                    if re.fullmatch(price_pattern, word_text):
+                        price_dict[(min_y, max_y)] = word_text
+                    else:
+                        # avg_x = sum([vertex.x for vertex in bounding_box.vertices]) / len(bounding_box.vertices)
+                        word_dict[word_text] = [min_y, max_y]
+                        word_keys.append(word_text)
 
-    # if len(annotations) > 0:
-    #     text = annotations[0].description
-    # else:
-    #     text = ''
-    #
-    print('Extracted text {} from image ({} chars).'.format(text, len(text)))
+    for price_bounds in price_dict:
+        price = price_dict[price_bounds]
+        price_word_pairing[price] = ""
 
-    detect_language_response = translate_client.detect_language(text)
-    lang = detect_language_response['language']
-    print('Detected language {} for text {}.'.format(lang, text))
+        for word in word_keys:
+            word_bounds = word_dict[word]
+            line_score = valid_line_match(price_bounds, word_bounds)
 
-    topic_name = config['RESULT_TOPIC']
-    message = {
-        "text": text,
-        "filename": filename,
-        "lang": lang
-    }
-    message_data = json.dumps(message).encode('utf-8')
-    topic_path = publisher.topic_path(project_id, topic_name)
-    future = publisher.publish(topic_path, data=message_data)
+            if line_score:
+                if word.lower() in special_words:
+                    special_dict[word] = price
+                    price_word_pairing.pop(price, None)
+                else:                    
+                    print("{}: {} \n word {}: {}".format(price, price_bounds, word, word_bounds))
+                    price_word_pairing[price] += word + " "
 
-    futures.append(future)
+    items_str = dict_to_json(price_word_pairing)
+    special_str = dict_to_json(special_dict)
+    json_string = combine_to_json(items_str, special_str)
+
+    bucket_name = config['RESULT_BUCKET']
+    result_filename = '{}_items.json'.format(filename)
+
+    bucket = storage_client.get_bucket(bucket_name)
+    file = bucket.blob(result_filename)
+    print('Saving result to {} in bucket {}.'.format(result_filename,
+                                                     bucket_name))
+    file.upload_from_string(json_string)
+    print('File saved.')
 
 # [END functions_ocr_detect]
 
@@ -97,51 +164,48 @@ def process_image(file, context):
 # [END functions_ocr_process]
 
 
-def parse_receipt(event, context):
-    if event.get('data'):
-        message_data = base64.b64decode(event['data']).decode('utf-8')
-        message = json.loads(message_data)
-    else:
-        raise ValueError('Data sector is missing in the Pub/Sub message.')
+# def parse_receipt(event, context):
+#     if event.get('data'):
+#         message_data = base64.b64decode(event['data']).decode('utf-8')
+#         message = json.loads(message_data)
+#     else:
+#         raise ValueError('Data sector is missing in the Pub/Sub message.')
 
-    text = validate_message(message, 'text')
-    filename = validate_message(message, 'filename')
+#     text = validate_message(message, 'text')
+#     filename = validate_message(message, 'filename')
 
-    pattern = "\d*\.\d\d"
-    matches = re.findall(pattern, text)
+#     pattern = "\d*\.\d\d"
+#     matches = re.findall(pattern, text)
 
-    # matches = ["6.00", "10.00", "3.00"]
-
-
-
-
-
+#     # matches = ["6.00", "10.00", "3.00"]
 
 
 # [START functions_ocr_save]
-def save_result(event, context):
-    if event.get('data'):
-        message_data = base64.b64decode(event['data']).decode('utf-8')
-        message = json.loads(message_data)
-    else:
-        raise ValueError('Data sector is missing in the Pub/Sub message.')
+# def save_result(event, context):
+    
+#     if event.get('data'):
+#         message_data = base64.b64decode(event['data']).decode('utf-8')
+#         message = json.loads(message_data)
+#     else:
+#         raise ValueError('Data sector is missing in the Pub/Sub message.')
+    
+#     print('we here now')
+#     filename = validate_message(message, 'filename')
+#     text = validate_message(message, 'text')
 
-    text = validate_message(message, 'text')
-    filename = validate_message(message, 'filename')
+#     print('Received request to save file {}.'.format(filename))
 
-    print('Received request to save file {}.'.format(filename))
+#     bucket_name = config['RESULT_BUCKET']
+#     result_filename = '{}_text.txt'.format(filename)
 
-    bucket_name = config['RESULT_BUCKET']
-    result_filename = '{}_text.txt'.format(filename)
+#     bucket = storage_client.get_bucket(bucket_name)
 
-    bucket = storage_client.get_bucket(bucket_name)
+#     file = bucket.blob(result_filename)
 
-    file = bucket.blob(result_filename)
+#     print('Saving result to {} in bucket {}.'.format(result_filename,
+#                                                      bucket_name))
 
-    print('Saving result to {} in bucket {}.'.format(result_filename,
-                                                     bucket_name))
+#     file.upload_from_string(text)
 
-    file.upload_from_string(text)
-
-    print('File saved.')
+#     print('File saved.')
 # [END functions_ocr_save]
