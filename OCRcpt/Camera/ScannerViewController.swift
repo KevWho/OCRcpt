@@ -73,11 +73,11 @@ extension ScannerViewController: AVCapturePhotoCaptureDelegate {
         let cgImage = photo.cgImageRepresentation()!.takeRetainedValue()
         let image = UIImage(cgImage: cgImage, scale: 1, orientation: .up)
         
-        dismiss(animated: true, completion: nil)
-        
         if self.delegate != nil {
             self.delegate?.useImage(image)
         }
+        
+        dismiss(animated: true, completion: nil)
     }
     
 }

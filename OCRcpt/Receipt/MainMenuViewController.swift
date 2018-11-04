@@ -13,7 +13,9 @@ import SideMenu
 class MainMenuViewController: UIViewController {
     
     @IBOutlet var itemListTableView: UITableView!
-    @IBOutlet var continueButton: RoundedButton!
+    @IBOutlet var continueButton: ContinueButton!
+    
+    var image: UIImage!
     
     var _items = [Item]()
     var items: [Item] {
@@ -21,7 +23,7 @@ class MainMenuViewController: UIViewController {
             return _items
         } set(val) {
             _items = val
-            continueButton.isEnabled = _items.count > 0
+            continueButton.update(enabled: _items.count > 0)
         }
     }
     
@@ -113,11 +115,10 @@ extension MainMenuViewController: NewItemCellDelegate {
     
 }
 
-
 extension MainMenuViewController: ScannerViewDelegate {
     
     func useImage(_ image: UIImage!) {
-        //Send to Corey's stuff
+        self.image = image
     }
     
 }

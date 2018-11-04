@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import BlinkReceipt
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        BRScanManager.shared().licenseKey = "sRwAAAERY29tLm9jcmNwdC5vY3JjcHTaDxQt5Lwobi5JpG1FrTh5BD6ZSbavb7T3lZf29+Y+RklSIVnc1ENQWG+VjyMeOVWHh64KSNZieo445qC2xGAnqGnIJQa+NcUTfsYgYS6+eztJ84z6BZECSBaBAQxQQaQlwo24ap+iDMmKnJ1J/ne4Nn9AHI1FZrVIvoeBR2QdiSQ5D7ME95O6Xvwsc3is"
+        PersonDataStore.shared.fetch()
         
         return true
     }
