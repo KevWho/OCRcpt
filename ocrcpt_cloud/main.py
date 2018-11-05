@@ -114,7 +114,7 @@ def detect_text(bucket, filename):
                 if word.lower() in special_words:
                     special_dict[word] = price
                     price_word_pairing.pop(price, None)
-                else:                    
+                elif price in price_word_pairing:                
                     print("{}: {} \n word {}: {}".format(price, price_bounds, word, word_bounds))
                     price_word_pairing[price] += word + " "
 

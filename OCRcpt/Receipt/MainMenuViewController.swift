@@ -128,18 +128,16 @@ extension MainMenuViewController: ScannerViewDelegate {
     
     func useImage(_ image: UIImage!) {
         self.image = image
+    
+        let date = String(Int(Date().timeIntervalSince1970))
         
-        let formatter = DateFormatter()
-        formatter.dateStyle = .full
-        self.upload(filename: formatter.string(from: Date()))
+        self.upload(filename: date)
         
         //Use self.image and send it to the URL request
     }
     
     func upload(filename: String){
-        var fn = filename
-        fn = "100"
-        
+        let fn = filename
         let imageData = self.image.jpegData(compressionQuality: 1.0)
         
         let request = NSMutableURLRequest(url: NSURL(string: "https://www.googleapis.com/upload/storage/v1/b/image_in_ocrcpt/o?uploadType=media&name=\(fn)")! as URL)
